@@ -4,6 +4,8 @@ module DDDLib::InitializationDSL
   extend ActiveSupport::Concern
 
   included do
+    include SmartCore::Initializer
+
     # :nocov:
     def provided_options
       options.compact

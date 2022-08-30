@@ -7,7 +7,6 @@ require_relative "class_attribute_dsl"
 
 class DDDLib::AbstractStruct
   include DDDLib::BuilderDSL
-  include SmartCore::Initializer
   include DDDLib::InitializationDSL
   include DDDLib::ImportDSL
   include DDDLib::ClassAttributeDSL
