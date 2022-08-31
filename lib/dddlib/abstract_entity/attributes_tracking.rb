@@ -25,7 +25,7 @@ module DDDLib::AbstractEntity::AttributesTracking
     end
 
     def add_changed_attribute!(attr, from, to)
-      changed_attributes[attr] = { from:, to: }
+      changed_attributes[attr] = { from: from, to: to }
     end
 
     def delete_changed_attributes!(*attrs)
