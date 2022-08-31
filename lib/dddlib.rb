@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
-require "active_support"
-require "resol"
-
 module DDDLib
   require_relative "dddlib/version"
+
+  module Core
+    module EntityAttributes; end
+  end
+
+  module DataAccess; end
+  module Utils; end
+  module Web; end
 end

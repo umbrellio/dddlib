@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-require "dddlib"
+require "open3"
+require "shellwords"
 
-require "dddlib/data_access"
-require "dddlib/abstract_command"
+require "parallel"
+
+Dir["#{__dir__}/../lib/**/*.rb"].sort.each { |x| require x }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -15,4 +17,7 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.order = :random
+  Kernel.srand config.seed
 end

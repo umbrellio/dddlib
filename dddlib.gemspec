@@ -26,10 +26,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "activesupport" # TODO: remove AS dependency
-  spec.add_dependency "memery" # TODO: remove AS dependency
-  spec.add_dependency "resol"
-
+  spec.add_development_dependency "parallel"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"

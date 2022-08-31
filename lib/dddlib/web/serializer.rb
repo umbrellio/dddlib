@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
-class DDDLib::AbstractSerializer
-  include DDDLib::BuilderDSL
-  include DDDLib::ImportDSL
+require_relative "../utils/builder_dsl"
+require_relative "../utils/import_dsl"
+
+class DDDLib::Web::Serializer
+  include DDDLib::Utils::BuilderDSL
+  include DDDLib::Utils::ImportDSL
 
   def self.call(object, context = {})
     build(object, context).call

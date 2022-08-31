@@ -1,10 +1,14 @@
+GIT
+  remote: https://github.com/umbrellio/smart-validator.git
+  revision: 875b034324c5ed5916b981a65759dbc8580e55f1
+  specs:
+    smart-validator (0.1.0)
+      smart_schema (~> 0.5)
+
 PATH
   remote: .
   specs:
     dddlib (0.1.0)
-      activesupport
-      memery
-      resol
 
 GEM
   remote: https://rubygems.org/
@@ -95,7 +99,10 @@ GEM
       qonfig (~> 0.24)
       smart_engine (~> 0.11)
       smart_types (~> 0.4)
-    smart_types (0.7.0)
+    smart_schema (0.5.0)
+      smart_engine (~> 0.11)
+      smart_types (~> 0.4)
+    smart_types (0.7.1)
       smart_engine (~> 0.11)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
@@ -106,12 +113,17 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
+  activesupport
   dddlib!
+  memery
+  parallel
   pry
   rake
+  resol
   rspec
   rspec-json_matcher
   rubocop-config-umbrellio
+  smart-validator!
 
 BUNDLED WITH
    2.3.21

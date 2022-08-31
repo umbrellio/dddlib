@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-module DDDLib::AbstractEntity::AttributesSetters
+require "dddlib"
+
+module DDDLib::Core::EntityAttributes::Setters
   def self.included(base)
     base.extend_initialization_flow do |entity|
       entity.class.attributes.each do |_, attr|

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-module DDDLib::ImportDSL
+require "dddlib"
+
+module DDDLib::Utils::ImportDSL
   def self.included(klass)
     mod = self
 

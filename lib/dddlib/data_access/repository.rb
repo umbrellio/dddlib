@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
-class DDDLib::DataAccess::AbstractRepository
-  include DDDLib::ImportDSL
-  include DDDLib::ClassAttributeDSL
+require "dddlib/utils/import_dsl"
+require "dddlib/utils/class_attribute_dsl"
+
+class DDDLib::DataAccess::Repository
+  include DDDLib::Utils::ImportDSL
+  include DDDLib::Utils::ClassAttributeDSL
 
   InvalidReturnType = Class.new(StandardError)
 

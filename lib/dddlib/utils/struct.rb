@@ -2,16 +2,17 @@
 
 require "memery"
 
-require_relative "builder_dsl"
-require_relative "initialization_dsl"
-require_relative "import_dsl"
-require_relative "class_attribute_dsl"
+require "dddlib"
+require "dddlib/utils/builder_dsl"
+require "dddlib/utils/initialization_dsl"
+require "dddlib/utils/import_dsl"
+require "dddlib/utils/class_attribute_dsl"
 
-class DDDLib::AbstractStruct
-  include DDDLib::BuilderDSL
-  include DDDLib::InitializationDSL
-  include DDDLib::ImportDSL
-  include DDDLib::ClassAttributeDSL
+class DDDLib::Utils::Struct
+  include DDDLib::Utils::BuilderDSL
+  include DDDLib::Utils::InitializationDSL
+  include DDDLib::Utils::ImportDSL
+  include DDDLib::Utils::ClassAttributeDSL
   include Memery
 
   class << self

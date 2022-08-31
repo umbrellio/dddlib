@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class DDDLib::AbstractValue < DDDLib::AbstractStruct
+require "dddlib/utils/struct"
+
+class DDDLib::Core::Value < DDDLib::Utils::Struct
   def self.build(*params, **attributes)
     new(*params, **attributes.symbolize_keys)
   end

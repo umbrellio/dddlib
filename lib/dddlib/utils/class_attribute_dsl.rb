@@ -2,8 +2,9 @@
 
 require "active_support/core_ext/class/attribute"
 
-# :nocov:
-module DDDLib::ClassAttributeDSL
+require "dddlib"
+
+module DDDLib::Utils::ClassAttributeDSL
   def self.included(klass)
     klass.extend(ClassMethods)
   end

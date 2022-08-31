@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-class DDDLib::DomainEvent < DDDLib::AbstractStruct
-  include DDDLib::ImportDSL
+require "dddlib/utils/struct"
+require "dddlib/utils/import_dsl"
+
+class DDDLib::Core::DomainEvent < DDDLib::Utils::Struct
+  include DDDLib::Utils::ImportDSL
 
   class_and_instance_attribute :type
 

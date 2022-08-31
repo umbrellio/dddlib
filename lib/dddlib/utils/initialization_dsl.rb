@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
-module DDDLib::InitializationDSL
+require "active_support/concern"
+require "smart_core/initializer"
+
+require "dddlib"
+
+module DDDLib::Utils::InitializationDSL
   extend ActiveSupport::Concern
 
   included do

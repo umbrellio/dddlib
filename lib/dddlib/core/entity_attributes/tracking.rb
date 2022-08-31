@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-module DDDLib::AbstractEntity::AttributesTracking
+require "dddlib"
+
+module DDDLib::Core::EntityAttributes::Tracking
   module PrependedMethods
     def patch_attributes!(attributes)
       super(attributes).tap { delete_changed_attributes!(*attributes.keys) }
