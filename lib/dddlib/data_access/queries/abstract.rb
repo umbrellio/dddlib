@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "dddlib/data_access/repository"
+require "dddlib/data_access/repository/abstract"
 require "dddlib/utils/command"
 
-class DDDLib::DataAccess::Query < DDDLib::Utils::Command
+class DDDLib::DataAccess::Queries::Abstract < DDDLib::Utils::Command
   # TODO? include Sentry::TagsMixin
 
-  param :repo, SmartCore::Types::Protocol::InstanceOf(DDDLib::DataAccess::Repository)
+  param :repo, SmartCore::Types::Protocol::InstanceOf(DDDLib::DataAccess::Repository::Abstract)
 
   private
 

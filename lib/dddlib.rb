@@ -7,7 +7,13 @@ module DDDLib
     module EntityAttributes; end
   end
 
-  module DataAccess; end
+  module DataAccess
+    module Commands; end
+    module Queries; end
+    module Repository; end # TODO: pluralize
+    module Serialization; end
+  end
+
   module Utils; end
   module Web; end
 end

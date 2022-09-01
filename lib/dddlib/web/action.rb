@@ -5,7 +5,7 @@ require_relative "../utils/command"
 class DDDLib::Web::Action < DDDLib::Utils::Command
   Response = Struct.new(:status, :content_type, :data, :headers, keyword_init: true)
 
-  # param :request, Types::InstanceOf(Utils::RequestWrapper)
+  # param :request, SmartCore::Types::Protocol::InstanceOf(Utils::RequestWrapper)
   param :request # TODO: handle types
 
   def self.define_input_schema(&block)
