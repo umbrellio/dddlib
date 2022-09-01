@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
+require "dddlib/data_access/commands/abstract"
+require "dddlib/core/entity"
+
 class DDDLib::DataAccess::Commands::Lock < DDDLib::DataAccess::Commands::Abstract
-  option :repo, SmartCore::Types::Protocol::InstanceOf(DDDLib::DataAccess::Repository::Abstract)
+  option :repo, SmartCore::Types::Protocol::InstanceOf(DDDLib::DataAccess::Repositories::Abstract)
   option :entity, SmartCore::Types::Protocol::InstanceOf(DDDLib::Core::Entity)
 
   def call

@@ -1,15 +1,9 @@
 # frozen_string_literal: true
 
 require "dddlib/data_access/serialization/abstract"
+require "dddlib/core/entity"
 
 class DDDLib::DataAccess::Serialization::Load < DDDLib::DataAccess::Serialization::Abstract
-  class_and_instance_attribute :attr_mapping
-
-  delegate :entity_class, to: :repo
-
-  self.attr_mapping = {}
-
-  param :repo, SmartCore::Types::Protocol::InstanceOf(DDDLib::DataAccess::Repository::Abstract)
   option? :entity_to_reload, SmartCore::Types::Protocol::InstanceOf(DDDLib::Core::Entity)
 
   def call
@@ -24,6 +18,10 @@ class DDDLib::DataAccess::Serialization::Load < DDDLib::DataAccess::Serializatio
     else
       entity_class.new(**entity_attrs)
     end
+  end
+
+  def entity_class
+    repo.entity_class
   end
 
   def entity_attrs

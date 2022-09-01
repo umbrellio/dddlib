@@ -10,7 +10,7 @@ module DDDLib
   module DataAccess
     module Commands; end
     module Queries; end
-    module Repository; end # TODO: pluralize
+    module Repositories; end
     module Serialization; end
   end
 

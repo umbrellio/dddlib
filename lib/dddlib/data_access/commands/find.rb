@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+require "sequel"
+
 require "dddlib/data_access/commands/abstract"
 
 class DDDLib::DataAccess::Commands::Find < DDDLib::DataAccess::Commands::Abstract
-  option :repo, SmartCore::Types::Protocol::InstanceOf(DDDLib::DataAccess::Repository::Abstract)
+  option :repo, SmartCore::Types::Protocol::InstanceOf(DDDLib::DataAccess::Repositories::Abstract)
   option? :scope, SmartCore::Types::Protocol::InstanceOf(Sequel::Dataset)
   option? :where, SmartCore::Types::Protocol::InstanceOf(Hash, Array)
   option? :exclude, SmartCore::Types::Protocol::InstanceOf(Hash, Array)

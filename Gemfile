@@ -8,4 +8,5 @@ gemspec
 gem "activesupport" # TODO: remove AS dependency
 gem "memery" # TODO: remove AS dependency
 gem "resol"
+gem "sequel"
 gem "smart-validator", github: "umbrellio/smart-validator"

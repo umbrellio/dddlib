@@ -1,13 +1,9 @@
 # frozen_string_literal: true
 
+require "dddlib/data_access/serialization/abstract"
+
 class DDDLib::DataAccess::Serialization::DumpChangedAttributes <
       DDDLib::DataAccess::Serialization::Abstract
-  class_and_instance_attribute :attr_mapping
-
-  self.attr_mapping = {}
-
-  param :repo, SmartCore::Types::Protocol::InstanceOf(DDDLib::DataAccess::Repository::Abstract)
-
   def call
     self.model_attrs = repo.dump_entity(entity)
     success!(model_changed_attrs)

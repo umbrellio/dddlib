@@ -1,21 +1,22 @@
 # frozen_string_literal: true
 
+require "dddlib/data_access/serialization/abstract"
+
 class DDDLib::DataAccess::Serialization::Dump < DDDLib::DataAccess::Serialization::Abstract
-  class_and_instance_attribute :attr_mapping, :extra_attrs, :ignored_attrs
+  class_and_instance_attribute :extra_attrs, :ignored_attrs
 
-  delegate :model_class, to: :repo
-
-  self.attr_mapping = {}
   self.extra_attrs = []
   self.ignored_attrs = []
-
-  param :repo, SmartCore::Types::Protocol::InstanceOf(DDDLib::DataAccess::Repository::Abstract)
 
   def call
     success!(model_attrs)
   end
 
   private
+
+  def model_class
+    model_class.repo
+  end
 
   def model_attrs
     (model_class.attributes + extra_attrs - ignored_attrs).index_with { |x| get_value!(x) }

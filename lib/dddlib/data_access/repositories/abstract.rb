@@ -3,7 +3,7 @@
 require "dddlib/utils/import_dsl"
 require "dddlib/utils/class_attribute_dsl"
 
-class DDDLib::DataAccess::Repository::Abstract
+class DDDLib::DataAccess::Repositories::Abstract
   include DDDLib::Utils::ImportDSL
   include DDDLib::Utils::ClassAttributeDSL
 
