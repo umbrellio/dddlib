@@ -3,7 +3,7 @@
 require "dddlib/utils/struct"
 require "dddlib/utils/import_dsl"
 
-class DDDLib::Core::DomainEvent < DDDLib::Utils::Struct
+class DDDLib::Core::Event < DDDLib::Utils::Struct
   include DDDLib::Utils::ImportDSL
 
   class_and_instance_attribute :type

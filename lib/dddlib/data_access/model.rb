@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "sequel"
-
 require "dddlib"
 
 module DDDLib::DataAccess
